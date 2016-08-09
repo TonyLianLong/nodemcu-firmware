@@ -1,6 +1,8 @@
 #ifndef __USER_CONFIG_H__
 #define __USER_CONFIG_H__
 
+// #define DEVKIT_VERSION_0_9 1 	// define this only if you use NodeMCU devkit v0.9
+
 // #define FLASH_512K
 // #define FLASH_1M
 // #define FLASH_2M
@@ -31,7 +33,7 @@ extern void luaL_assertfail(const char *file, int line, const char *message);
 #define BIT_RATE_DEFAULT BIT_RATE_115200
 
 // This enables automatic baud rate detection at startup
-#define BIT_RATE_AUTOBAUD
+//#define BIT_RATE_AUTOBAUD
 
 #define NODE_ERROR
 
@@ -84,6 +86,18 @@ extern void luaL_assertfail(const char *file, int line, const char *message);
 #define LUA_TASK_PRIO USER_TASK_PRIO_0
 #define LUA_PROCESS_LINE_SIG 2
 #define LUA_OPTIMIZE_DEBUG      2
+
+#ifdef DEVKIT_VERSION_0_9
+#define KEYLED_INTERVAL	80
+
+#define KEY_SHORT_MS	200
+#define KEY_LONG_MS		3000
+#define KEY_SHORT_COUNT (KEY_SHORT_MS / READLINE_INTERVAL)
+#define KEY_LONG_COUNT (KEY_LONG_MS / READLINE_INTERVAL)
+
+#define LED_HIGH_COUNT_DEFAULT 10
+#define LED_LOW_COUNT_DEFAULT 0
+#endif
 
 #define ENDUSER_SETUP_AP_SSID "SetupGadget"
 
