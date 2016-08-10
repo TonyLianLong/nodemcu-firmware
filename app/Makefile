@@ -40,6 +40,7 @@ SUBDIRS= 					\
 	cjson 					\
 	crypto 					\
 	dhtlib					\
+	light					\
 	tsl2561					\
 	net					\
 	http
@@ -85,6 +86,7 @@ COMPONENTS_eagle.app.v6 = 			\
 	cjson/libcjson.a 			\
 	crypto/libcrypto.a 			\
 	dhtlib/libdhtlib.a 			\
+	light/liblight.a			\
 	tsl2561/tsl2561lib.a			\
 	http/libhttp.a				\
 	net/libnodemcu_net.a			\
